@@ -17,7 +17,8 @@ for episode in range(num_episodes):
     total_reward = 0
 
     while not done:
-        if VISUALIZE and episode == num_episodes - number_episodes_to_watch:
+        if VISUALIZE:
+            # and episode == num_episodes - number_episodes_to_watch:
             env.render(episode, start_time)
             clock.tick(10)
 

@@ -111,6 +111,17 @@ class MazeEnvironment:
 
         pygame.display.flip()
 
+    @staticmethod
+    def convert_string_to_walls(grid_string):
+        walls = []
+        goal = None
+        for x, row in enumerate(grid_string.split('\n')):
+            for y, char in enumerate(row):
+                if char == '1':
+                    walls.append((y, x))
+                elif char == '2':
+                    goal = (y, x)
+        return walls, goal
 
     @staticmethod
     def close():

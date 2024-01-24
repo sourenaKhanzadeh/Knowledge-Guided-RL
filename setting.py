@@ -3,14 +3,21 @@ from Envs.maze_env import MazeEnvironment
 from models.qnetwork import QNetwork
 
 
-WITH_KNOWLEDGE = False
+WITH_KNOWLEDGE = True
 VISUALIZE = True
 
 width, height = 6, 6
 start = (0, 0)
 goal = (5, 5)
-walls = [(1, 1), (1, 2), (2, 1), (2, 2)]  # Add more walls as needed
-
+grid = """
+000000
+011000
+011000
+000000
+000000
+000000
+"""
+walls, _ = MazeEnvironment.convert_string_to_walls(grid)
 # Example of a more complex maze setup
 # width, height = 15, 15  # Increased size of the maze
 # start = (0, 0)
